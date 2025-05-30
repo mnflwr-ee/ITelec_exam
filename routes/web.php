@@ -19,10 +19,11 @@ Route::middleware('auth')->group(function () {
     Route::view('about', 'about')->name('about');
 
 
-    Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])
-    Route::get('employee', [App\Http\Controllers\employeecontroller::class, ''])
-    Route::get('employee', [App\Http\Controllers\employeecontroller::class, ''])
-    Route::post('employee', [App\Http\Controllers\employeecontroller::class, ''])
+    Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+    Route::get('employee', [App\Http\Controllers\employeecontroller::class, 'index'])->name('employee.index');
+    Route::get('employee/create', [App\Http\Controllers\employeecontroller::class, 'create'])->name('employee.create');
+    Route::post('employee/create', [App\Http\Controllers\employeecontroller::class, 'store'])->name('employee.store');
+    
     Route::('employee/{id}/edit', [App\Http\Controllers\employeecontroller::class, 'edit'])
     Route::('employee/{id}/edit', [App\Http\Controllers\employeecontroller::class, 'update'])
     Route::('employee/{id}/delete', [App\Http\Controllers\employeecontroller::class, 'destroy'])
