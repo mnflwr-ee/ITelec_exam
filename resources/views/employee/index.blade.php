@@ -44,22 +44,22 @@
                         </thead>
 
                         <tbody  >
-                            @foreach ()
+                            @foreach ($employees as $items)
                             <tr>
                                 
-                                <td class="">{{ }}</td>
-                                <td>{{ }}</td>
-                                <td>{{ }}</td>
-                                <td>{{ }}</td>
-                                <td>{{ }}</td>
-                                <td>{{ }}</td>
-                                <td>{{ }}</td>
+                                <td class="">{{$items ->id }}</td>
+                                <td>{{$items->fname }}</td>
+                                <td>{{$items->lname}}</td>
+                                <td>{{$items->midname}}</td>
+                                <td>{{$items->age}}</td>
+                                <td>{{$items ->address}}</td>
+                                <td>{{$items ->zip}}</td>
                                 <td> 
-                                    <span class="badge bg-success"><a href="{{}}" class="btn btn-success"><h5>Edit</h5></a></span>
+                                    <span class="badge bg-success"><a href="{{route('employee.edit',$items->id)}}" class="btn btn-success"><h5>Edit</h5></a></span>
                                 </td>
                                 <td> 
                                     
-                                <span class="badge bg-danger"><a href="{{}}" class="btn btn-danger"><h5>Delete</h5></a></span>
+                                <span class="badge bg-danger"><a href="{{route('employee.delete',$items->id)}}" class="btn btn-danger"><h5>Delete</h5></a></span>
                                 </td>
                                 
                             </tr>
