@@ -27,7 +27,7 @@ class employeecontroller extends Controller
             'lname' => 'required|max:255|string',
             'midname' => 'required|max:255|string',
             'age' => 'required|integer',
-            'address' => 'required|integer',
+            'address' => 'required|max:255|string',
             'zip' => 'required|integer',    
         ]);
 
